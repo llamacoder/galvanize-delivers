@@ -1,0 +1,56 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+}
+
+nav {
+  flex:10;
+  width: 100%;
+}
+
+nav .brand-logo {
+  padding-left: 2%;
+}
+
+.slider {
+  flex:30;
+  height: 100%;
+}
+
+.marketing {
+  display: flex;
+  width: 75%;
+  flex:28;
+  height: 100%;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.marketingThird {
+  padding: 20px;
+  background-color: white;
+  flex: 1;
+}
+
+.marketingTitle {
+  color: #ff4081;
+  font-size: 135%;
+}
+
+footer {
+  flex:14;
+  height: 100%;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.footer-copyright {
+  flex:8;
+  height: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+}
