@@ -1,3 +1,28 @@
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(http://fonts.gstatic.com/s/materialicons/v30/2fcrYFNaTjcS6g4U3t-Y5UEw0lE80llgEseQY3FEmqw.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+
 .container {
   width: 100%;
   display: flex;
@@ -8,47 +33,98 @@
 nav {
   flex:10;
   width: 100%;
+  height: 40px;;
 }
 
 nav .brand-logo {
   padding-left: 2%;
+  font-size: 22px;
+  line-height: 40px;
+}
+
+
+
+nav .nav-wrapper {
+  flex:10;
+  line-height: 40px;
 }
 
 .slider {
   flex:30;
-  height: 100%;
+  height: 75%;
 }
 
+.caption h3 {
+  padding-top: 50px;
+  font-weight: bold;
+}
 .marketing {
   display: flex;
   width: 75%;
-  flex:28;
-  height: 100%;
+  flex:18;
   align-items: stretch;
   justify-content: center;
+  line-height: 1;
 }
 
 .marketingThird {
-  padding: 20px;
+  padding: 10px;
   background-color: white;
   flex: 1;
+  font-size: 12px;
+  margin-top: 0px;
 }
 
 .marketingTitle {
   color: #ff4081;
   font-size: 135%;
+  padding-top: 10px;
 }
 
-footer {
-  flex:14;
+section {
+  display:flex;
+  flex:10;
   height: 100%;
   width: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.footerStuffLeft {
+  margin-left: 12.5%;
+  padding-left: 10px;
+  line-height: 1;
 }
 
-.footer-copyright {
+.footerHeader {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.footerStuffRight {
+  margin-left: 37.5%;
+  padding-left: 10px;
+  line-height: 1;
+}
+
+.footerStuffRight a {
+  color: white;
+  padding-top: 5px;
+}
+
+.small {
+  font-size: 12px;
+}
+.tiny {
+  font-size: 10px;
+}
+
+
+footer {
+  width: 100%;
+}
+.copyrightStuff {
   flex:8;
+  padding-left: 13.5%;
   height: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
