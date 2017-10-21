@@ -89,6 +89,13 @@ section {
   padding-top: 5px;
   padding-bottom: 5px;
 }
+
+.footerStuff {
+  display:flex;
+  flex:10;
+  height: 100%;
+  width: 100%;
+}
 .footerStuffLeft {
   margin-left: 12.5%;
   padding-left: 10px;
@@ -129,4 +136,24 @@ footer {
   padding-top: 10px;
   padding-bottom: 10px;
   width: 100%;
+}
+@media only screen and (max-width: 500px) {
+
+.marketing {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  line-height: 1;
+}
+.footerStuff {
+  flex-direction: column;
+}
+
+.footerStuffRight {
+  margin-left: 12.5%;
+  padding-left: 10px;
+  line-height: 1;
+}
+
 }
