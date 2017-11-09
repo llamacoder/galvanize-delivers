@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--Import Google Icon Font-->
+  <!-- <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+  <!--Import materialize.css-->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"> -->
+  <link rel="stylesheet" href="./css/materialize.min.css">
+
+  <link rel="stylesheet" href="css/main.css">
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galvanize Delivers</title>
+</head>
+
+<body>
+  <div class="container">
+    <!-- MOBILE COLLAPSE -->
+    <nav>
+      <div class="nav-wrapper light-blue darken-4">
+        <a href="./index.html" class="brand-logo">Galvanize Delivers</a>
+        <a href="./order.html" data-activates="side_menu" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down light-blue darken-4">
+          <li><a href="./order.html" id="orderLink">Order Delivery</a></li>
+        </ul>
+        <ul class="side-nav" id="side_menu">
+          <li><a href="./index.html">Home</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="orderWrapper">
+      <div class="menuSection">
+        <h4>Menu</h4>
+        <div class="cardHolder">
+          <div class="card small menuCard">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="./img/burger.jpg">
+            </div>
+            <div class="card-content">
+              <h5>Royale with Cheese</h5>
+              <p>$8.99</p>
+            </div>
+            <div class="divider"></div>
+            <a class="waves-effect waves-light-blue btn-flat itemButton"
+              data-price="8.99" data-item-name="Royale with Cheese">ADD TO ORDER</a>
+          </div>
+          <div class="card small menuCard">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="./img/pizza.jpg">
+            </div>
+            <div class="card-content">
+              <h5>Arugula Pie</h5>
+              <p>$11.99</p>
+            </div>
+            <div class="divider"></div>
+            <a class="waves-effect waves-light-blue btn-flat itemButton"
+              data-price="11.99" data-item-name="Arugula Pie">ADD TO ORDER</a>
+          </div>
+          <div class="card small menuCard">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="./img/ribs.jpg">
+            </div>
+            <div class="card-content">
+              <h5>Smoked Swine</h5>
+              <p>$14.99</p>
+            </div>
+            <div class="divider"></div>
+            <a class="waves-effect waves-light-blue btn-flat itemButton" data-price="14.99"
+              data-item-name="Smoked Swine">ADD TO ORDER</a>
+          </div>
+          <div class="card small menuCard">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="./img/ice_cream.jpg">
+            </div>
+            <div class="card-content">
+              <h5>Ice Cream Biscuit</h5>
+              <p>$7.99</p>
+            </div>
+            <div class="divider"></div>
+            <a class="waves-effect waves-light-blue btn-flat itemButton"
+              data-price="7.99" data-item-name="Ice Cream Biscuit">ADD TO ORDER</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="orderSection">
+        <h4>Order</h4>
+        <div class="orderHolder center">
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th></th>
+                <th>Price</th>
+              </tr>
+            </thead>
+
+            <tbody id="itemTB">
+              <tr>
+                <td></td>
+                <td>Subtotal</td>
+                <td id="subtotalTD">$0</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Tax</td>
+                <td id="taxTD">$0</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Total</td>
+                <td id="totalTD">$0</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+        <div id="infoForm">
+          <form class="col s12">
+            <div class="row">
+              <div class="col s1">
+                <i class="material-icons">menu</i>
+              </div>
+              <div class="input-field col s8">
+                <input placeholder="Name" id="name" type="text" class="validate">
+                <label for="name">Name</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s1">
+                <i class="material-icons">menu</i>
+              </div>
+              <div class="input-field col s8">
+                <input placeholder="Phone Number" id="phone" type="text" class="validate">
+                <label for="phone">Phone Number</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s1">
+                <i class="material-icons">menu</i>
+              </div>
+              <div class="input-field col s8">
+                <input placeholder="Delivery Address" id="address" type="text" class="validate">
+                <label for="address">Address</label>
+              </div>
+            </div>
+            <div class="row orderButtonRow">
+              <button class="btn pink accent-2 center" id="orderButton">PLACE ORDER</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <section class="light-blue darken-3 white-text">
+      <div class="footerStuff">
+        <div class="footerStuffLeft">
+          <p class="footerHeader">Galvanize Delivers</p>
+          <p class="small">Fine Dining, Delivered</p>
+        </div>
+        <div class="footerStuffRight white-text">
+          <ul class="">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./order.html">Order Delivery</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer class="light-blue darken-4 white-text copyrightStuff tiny">&copy 2017 Galvanize Delivers
+    </footer>
+
+  </div>
+  <!-- ./container -->
+
+
+
+
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script> -->
+  <script src="./js/materialize.min.js"></script>
+  <script src="./js/main.js"></script>
+
+  <script>
+    $(".button-collapse").sideNav();
+    // Init Slider
+    $('.slider').slider({
+      indicators: false
+    });
+  </script>
+</body>
+
+</html>

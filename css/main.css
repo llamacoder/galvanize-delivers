@@ -42,10 +42,16 @@ nav .brand-logo {
   line-height: 40px;
 }
 
-
+#orderLink {
+  background-color: black;
+}
 
 nav .nav-wrapper {
   flex:10;
+  line-height: 40px;
+}
+
+nav .nav-wrapper a i {
   line-height: 40px;
 }
 
@@ -137,23 +143,92 @@ footer {
   padding-bottom: 10px;
   width: 100%;
 }
-@media only screen and (max-width: 500px) {
 
-.marketing {
+.menuSection {
+  display:flex;
+  flex: 1;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.menuSection h4 {
+  margin-left: 20px;
+  font-size: 24px;
+}
+
+.cardHolder {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.menuCard {
+  font-size: 12px;
+  width: 40%;
+  height: 40%;
+  margin-left: 20px;
+}
+
+.menuCard h5 {
+  font-size: 16px;
+}
+
+div .itemButton {
+  color:#ff4081;
+  padding-left: 20px;
+}
+.orderWrapper {
+  flex-direction: row;
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: center;
-  line-height: 1;
-}
-.footerStuff {
-  flex-direction: column;
 }
 
-.footerStuffRight {
-  margin-left: 12.5%;
-  padding-left: 10px;
-  line-height: 1;
+.orderSection {
+  flex:1;
 }
+
+.orderSection h4 {
+  font-size: 24px;
+}
+
+.orderHolder {
+  width: 80%;
+}
+
+.orderButtonRow {
+  width:80%;
+  text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .cardHolder {
+    flex-direction: column;
+  }
+
+  .menuCard {
+    width: 80%;
+  }
+
+}
+@media only screen and (max-width: 400px) {
+  .orderWrapper {
+    flex-direction: column;
+  }
+  .marketing {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    line-height: 1;
+  }
+  .footerStuff {
+    flex-direction: column;
+  }
+
+  .footerStuffRight {
+    margin-left: 12.5%;
+    padding-left: 10px;
+    line-height: 1;
+  }
+
 
 }
