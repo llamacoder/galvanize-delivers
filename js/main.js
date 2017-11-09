@@ -1,5 +1,3 @@
-document.addEventListener("DOMContentLoaded", function() {
-
   gOrderItems = [];
   gSubtotal = 0;
   gTax = 0;
@@ -11,23 +9,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
       //  update the order list UI
       let $tableBody = $("#itemTB");
-      let newRow = "<tr><td>" + name + "</td><td></td><td>" + price + "</td></tr>"
+      let newRow = "<tr class='item-row'><td>" + name + "</td><td></td><td>" + price + "</td></tr>"
       let row = $(newRow);
       $tableBody.prepend(row);
 
       //  update the subtotal, tax, and total and their UIs
       // TODO: format to two decimal places
-      gSubtotal += Math.round(Number(price.substring(1))*0.05*100)/100;
-      gTax = Math.round(gSubtotal*0.05*100)/100;
-      gTotal = Math.round((gSubtotal+gTax)*0.05*100)/100;
+      gSubtotal += Math.round(Number(price.substring(1))*100)/100;
+      gTax = Math.round(gSubtotal*0.1001*100)/100;
+      gTotal = Math.round((gSubtotal+gTax)*100)/100;
 
-      let subtotalTD = $("#subtotalTD");
-      let taxTD = $("#taxTD");
-      let totalTD = $("#totalTD");
-      subtotalTD.text("$" + gSubtotal);
-      taxTD.text("$" + gTax);
-      totalTD.text("$" + gTotal);
+      updateUITotals();
+  }
 
+  function updateUITotals() {
+    let subtotalTD = $("#subtotalTD");
+    let taxTD = $("#taxTD");
+    let totalTD = $("#totalTD");
+    subtotalTD.text("$" + gSubtotal.toFixed(2));
+    taxTD.text("$" + gTax.toFixed(2));
+    totalTD.text("$" + gTotal.toFixed(2));
   }
 
   function processItemButton(event) {
@@ -49,11 +50,54 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
+  function clearOrderList() {
+    gOrderItems = [];
+    gSubtotal = 0;
+    gTax = 0;
+    gTotal = 0;
+
+    //  update the order list UI
+    $( ".item-row" ).remove();
+    updateUITotals();
+  }
+
+  function validateForm() {
+      var name = document.forms["infoForm"]["name"].value;
+      var address = document.forms["infoForm"]["address"].value;
+      var phone = document.forms["infoForm"]["phone"].value;
+      if (name === "") {
+        Materialize.toast('Please enter your name.', 3000) // 3000 is the duration of the toast
+          return false;
+      }
+      if (phone === "") {
+        Materialize.toast('Please enter your phone number.', 3000) // 3000 is the duration of the toast
+          return false;
+      }
+      if (address === "") {
+        Materialize.toast('Please enter your address.', 3000) // 3000 is the duration of the toast
+          return false;
+      }
+      return true;
+  }
+
+  function processOrder() {
+    if (gTotal === 0) {
+      Materialize.toast('Add items you would like to purchase.', 3000) // 3000 is the duration of the toast
+    } else if (validateForm()) {
+      Materialize.toast('Thanks for your order!', 3000) // 3000 is the duration of the toast
+      clearOrderList();
+    }
+  }
+
   function addFormSubmit() {
-    $("#infoForm").submit(function() {
-      alert("submit");
+    $("#infoForm").submit(function(event) {
+      event.preventDefault();
+      processOrder();
     });
   }
+
+  document.addEventListener("DOMContentLoaded", function() {
+
 
   addItemButtonListeners();
   addFormSubmit();
